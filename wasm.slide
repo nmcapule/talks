@@ -58,9 +58,25 @@ Wasm is designed as a portable target for compilation of high-level languages li
 
 * WebAssembly with Go
 
+Before WebAssembly, there was
+
+: There were already some efforts to bring Go to the frontend, and one of the frontrunners of the race (before Wasm) is *GopherJS*.
+
+*GopherJS* - compiles Go code to asm.js.
+
+.code snippets/gopherjs.go
+
+: The above code sets a js global var "pet" with a function "New"
+
+* WebAssembly with Go
+
+Go 1.11 (2018) included an experimental port of Wasm in Go, contributed by the creator of GopherJS.
+
+* WebAssembly with Go
+
 1. Compile your Go code to Wasm.
 
-  $ GOOS=js GOARCH=wasm go build -o main.wasm
+  $ GOOS=js GOARCH=wasm go build -o main.wasm main.go
 
 2. Get the Wasm support file.
 
@@ -81,11 +97,18 @@ Wasm is designed as a portable target for compilation of high-level languages li
 
   $ go run serve.go
 
-* Future improvements
+* Demo
+
+* Room for improvements
 
 1. File size for Go-generated wasm files are too large atm. Hello World costs `2.4MB`.
+
+: It's already a known problem with vanilla Go compile that it produces large executables, since it includes the Go runtime.
+
+2. Runtime and startup perf is oftentimes slower than native JS. If you want to take advantage of Wasm _now_, better use C/C++/Rust. Or use GopherJS (better browser compatibility, file size comparable to JS)
 
 * References
 
 .link https://github.com/golang/go/wiki/WebAssembly#getting-started
 
+.link https://medium.com/gopherjs/future-of-gopherjs-and-go-in-the-browser-cc1667468160
