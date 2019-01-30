@@ -1,0 +1,91 @@
+WebAssembly with Go
+An Introduction
+18:30 31 Jan 2019
+Tags: foo, bar, baz
+
+Nathaniel Capule
+Software Developer, Concentrix
+nmcapule@gmail.com
+github.com/nmcapule
+
+* WebAssembly
+
+* NaCL / PNaCL
+
+Something like a prototype version of WebAssembly. Pushed by Google.
+
+- *NaCL*: Run compiled C/C++ code at near native speeds. Architecture specific - need to compile for each platform.
+- *PNaCL*: It's like NaCL, but portable. Compiles C/C++ to portable executable. Think JVM. There are some efforts to allow other languages to compile with PNaCL.
+
+: Google even allowed some Chrome apps to be written in PNaCL.
+
+* asm.js
+
+A strict subset of JavaScript. Pushed by Mozilla.
+
+- JavaScript engines (v8, SpiderMonkey, etc) tries it best to optimize the hell out of JavaScript codes.
+- Some code, they can understand easily. Some code, they can optimize very much that it's close to native code execution.
+- asm.js is JavaScript code, written to be very much understandable, very much optimizable by JavaSCript engines.
+
+* asm.js
+
+*Input*: C
+
+.code snippets/asm-pre.c
+
+*Output*: asm.js
+
+.code snippets/asm-post.js
+
+* Back to WebAssembly
+
+Some years ago in 2015, major browser vendors met up and decided maybe it's time to extend the browser, to allow running some close to metal codes and take better advantage of the users' hardware.
+
+.link webassembly.org
+
+WebAssembly (or Wasm) is a binary instruction format for a stack-based virtual machine.
+
+Wasm is designed as a portable target for compilation of high-level languages like C/C++/Rust, enabling deployment on the web for client and server applications.
+
+* Why WebAssembly
+
+- faster than JavaScript (start-up, execution)
+- readable and debuggable (It even has S-expressions!)
+- safe and sandboxed
+- open web
+
+.code snippets/wasm-s-expr.txt
+
+* WebAssembly with Go
+
+1. Compile your Go code to Wasm
+
+  $ GOOS=js GOARCH=wasm go build -o main.wasm
+
+2. Get the Wasm support file
+
+  $ cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" .
+
+3. Attach both the support file and compiled wasm to your html page
+
+
+  <script src="wasm_exec.js"></script>
+  <script>
+  const go = new Go();
+  WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then((result) => {
+    go.run(result.instance);
+  });
+  </script>
+
+4. Serve
+
+  $ python -m SimpleHTTPServer 8080
+
+* Future improvements
+
+1. File size for Go-generated wasm files are too large atm. Hello World costs `2.4MB`.
+
+* References
+
+.link https://github.com/golang/go/wiki/WebAssembly#getting-started
+

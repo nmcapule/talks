@@ -1,0 +1,6 @@
+➜  wasm l
+total 2.4M
+drwxr-xr-x  2 ncapule primarygroup 4.0K Jan 30 20:54 .
+drwxr-xr-x 10 ncapule primarygroup 4.0K Jan 28 22:44 ..
+-rw-r--r--  1 ncapule primarygroup   75 Jan 28 22:44 main.go
+-rwxr-xr-x  1 ncapule primarygroup 2.4M Jan 30 20:41 main.wasm
