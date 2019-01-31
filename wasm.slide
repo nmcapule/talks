@@ -129,19 +129,9 @@ Or with testing:
 
   $ GOOS=js GOARCH go test -exec="$(go env GOROOT)/misc/wasm/go_js_wasm_exec" main.go
 
-* Examples
-
-.link https://stdiopt.github.io/gowasm-experiments/bumpy
-
-.link https://stdiopt.github.io/gowasm-experiments/splashy
-
-Not Go-WebAssembly, but still cool WebAssembly demo
-
-.link https://s3.amazonaws.com/mozilla-games/ZenGarden/EpicZenGarden.html
-
 * Why WebAssembly with Go?
 
-: Same as the usual advantage of using WebAssembly
+- Same as the usual advantage of using WebAssembly
 
 - Less JavaScript? Usual JavaScript with the faster bits optimized by being coded in Go Wasm?
 
@@ -154,6 +144,16 @@ Not Go-WebAssembly, but still cool WebAssembly demo
 : Remember they have the same author
 
 : Why not?
+
+* Examples
+
+.link https://stdiopt.github.io/gowasm-experiments/bumpy
+
+.link https://stdiopt.github.io/gowasm-experiments/splashy
+
+Not Go-WebAssembly, but still cool WebAssembly demo
+
+.link https://s3.amazonaws.com/mozilla-games/ZenGarden/EpicZenGarden.html
 
 * Room for improvements
 
