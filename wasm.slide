@@ -99,13 +99,37 @@ Go 1.11 (2018) included an experimental port of Wasm in Go, contributed by the c
 
 * Demo
 
+* Debugging
+
+- Debugging not yet available for Go-WebAssembly's current release
+
+- Print line debugging (for now)
+
+* Testing
+
+* Why?
+
+: Same as the usual advantage of using WebAssembly
+
+- Less JavaScript? Usual JavaScript with the faster bits optimized by being coded in Go Wasm?
+
+- Game development, physics simulation, canvas painting (think Photoshop), etc, in the browser with Go
+
+- Now possible to have a development workflow that can take advantage of both frontend and backend in Go.
+
+- GopherJS already accumulated some traction: gopherjs/vecty, oskca/gopherjs-vue, hajimehoshi/ebiten, etc. Wasm can capitalize due to planned easy migration from GopherJS to Go WebAssembly.
+
+: Remember they have the same author
+
+: Why not?
+
 * Room for improvements
 
-1. File size for Go-generated wasm files are too large atm. Hello World costs `2.4MB`.
+- File size for Go-generated wasm files are too large atm. Hello World costs `2.4MB`.
 
 : It's already a known problem with vanilla Go compile that it produces large executables, since it includes the Go runtime.
 
-2. Runtime and startup perf is oftentimes slower than native JS. If you want to take advantage of Wasm _now_, better use C/C++/Rust. Or use GopherJS (better browser compatibility, file size comparable to JS)
+- Runtime and startup perf is oftentimes slower than native JS. If you want to take advantage of Wasm _now_, better use C/C++/Rust. Or use GopherJS (better browser compatibility, file size comparable to JS)
 
 * References
 
