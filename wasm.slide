@@ -114,11 +114,19 @@ Go 1.11 (2018) included an experimental port of Wasm in Go, contributed by the c
   });
   </script>
 
-4. Serve.
+4. Serve. Make sure that the wasm file is served with content type = "application/wasm"
 
   $ go run serve.go
 
 * Demo
+
+* Demo
+
+.code main_sleeper.go
+
+* Demo
+
+.code main_dom.go
 
 * Debugging
 
@@ -135,6 +143,16 @@ There's a way to run Go-WebAssembly in `node`. As long as Go and node are instal
 Or with testing:
 
   $ GOOS=js GOARCH go test -exec="$(go env GOROOT)/misc/wasm/go_js_wasm_exec" main.go
+
+* Examples
+
+.link https://stdiopt.github.io/gowasm-experiments/bumpy
+
+.link https://stdiopt.github.io/gowasm-experiments/splashy
+
+Not Go-WebAssembly, but still cool WebAssembly demo
+
+.link https://s3.amazonaws.com/mozilla-games/ZenGarden/EpicZenGarden.html
 
 * Room for improvements
 
