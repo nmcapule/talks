@@ -166,6 +166,10 @@ Not Go-WebAssembly, but still cool WebAssembly demo
 
 - Runtime and startup perf is oftentimes slower than native JS. If you want to take advantage of Wasm _now_, better use C/C++/Rust. Or use GopherJS (better browser compatibility, file size comparable to JS).
 
+.link https://dev.to/hajimehoshi/gopherjs-vs-webassembly-for-go-148m
+
+.link https://pspdfkit.com/blog/2018/a-real-world-webassembly-benchmark/
+
 * References
 
 .link https://github.com/golang/go/wiki/WebAssembly#getting-started
