@@ -1,5 +1,4 @@
 WebAssembly with Go
-An Introduction
 18:30 31 Jan 2019
 Tags: foo, bar, baz
 
@@ -25,7 +24,7 @@ A strict subset of JavaScript. Pushed by Mozilla.
 
 - JavaScript engines (v8, SpiderMonkey, etc) tries it best to optimize the hell out of JavaScript codes.
 - Some code, they can understand easily. Some code, they can optimize very much that it's close to native code execution.
-- *asm.js* is JavaScript code, written to be very much understandable, very much optimizable by JavaSCript engines.
+- *asm.js* is JavaScript code, written to be very much understandable, very much optimizable by JavaScript engines.
 
 * asm.js
 
@@ -59,23 +58,9 @@ Wasm is designed as a portable target for compilation of high-level languages li
 
 .code snippets/wasm-s-expr.txt
 
+.link https://github.com/WebAssembly/wabt
+
 * WebAssembly with Go
-
-* Why WebAssembly with Go?
-
-: Same as the usual advantage of using WebAssembly
-
-- Less JavaScript? Usual JavaScript with the faster bits optimized by being coded in Go Wasm?
-
-- Game development, physics simulation, canvas painting (think Photoshop), etc, in the browser with Go
-
-- Now possible to have a development workflow that can take advantage of both frontend and backend in Go.
-
-- GopherJS already accumulated some traction: gopherjs/vecty, oskca/gopherjs-vue, hajimehoshi/ebiten, etc. Wasm can capitalize due to planned easy migration from GopherJS to Go WebAssembly.
-
-: Remember they have the same author
-
-: Why not?
 
 * WebAssembly with Go
 
@@ -91,7 +76,7 @@ Before WebAssembly support in the Go compiler, there's
 
 * WebAssembly with Go
 
-Go 1.11 (2018) included an experimental port of Wasm in Go, contributed by the creator of GopherJS.
+Go 1.11 (2018) included an experimental port of Wasm in Go, contributed by the creator of GopherJS (@neelance)
 
 * WebAssembly with Go
 
@@ -153,6 +138,22 @@ Or with testing:
 Not Go-WebAssembly, but still cool WebAssembly demo
 
 .link https://s3.amazonaws.com/mozilla-games/ZenGarden/EpicZenGarden.html
+
+* Why WebAssembly with Go?
+
+: Same as the usual advantage of using WebAssembly
+
+- Less JavaScript? Usual JavaScript with the faster bits optimized by being coded in Go Wasm?
+
+- Game development, physics simulation, canvas painting (think Photoshop), etc, in the browser with Go
+
+- Now possible to have a development workflow that can take advantage of both frontend and backend in Go.
+
+- GopherJS already accumulated some traction: gopherjs/vecty, oskca/gopherjs-vue, hajimehoshi/ebiten, etc. Wasm can capitalize due to planned easy migration from GopherJS to Go WebAssembly.
+
+: Remember they have the same author
+
+: Why not?
 
 * Room for improvements
 
